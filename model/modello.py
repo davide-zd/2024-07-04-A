@@ -29,8 +29,10 @@ class Model:
         lista_archi = DAO.getEdges(anno, shape)
         for a in lista_archi:
             if (a[2] < a[3]):
+                # arco uscente
                 self._grafo.add_edge(self._idMap[a[0]], self._idMap[a[1]])
             else:
+                # arco entrante
                 self._grafo.add_edge(self._idMap[a[1]], self._idMap[a[0]])
 
     def graphDetails(self):
